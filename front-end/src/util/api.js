@@ -12,3 +12,11 @@ export const authenticate = async (login, password) => {
         password: password
     });
 };
+
+export const signup = async (name, username, password) => {
+    return api.post("/users", {
+        name: name,
+        username: username,
+        password: password
+    });
+};

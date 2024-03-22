@@ -11,13 +11,13 @@ import {
 import Login from "./view/login";
 import HomePage from "./view/homepage";
 import Product from "./view/product";
+import Signup from "./view/signup"
 import { useContext } from 'react';
 import { AuthContext, AuthProvider } from "./context/authentication";
 
 const Rotas = () => {
     const Private = ({ children }) => {
         const { authenticated } = useContext(AuthContext);
-        const navigate = useNavigate();
 
         if (!authenticated) {
             return <Navigate to="/login" />;
@@ -30,6 +30,7 @@ const Rotas = () => {
             <AuthProvider>
                 <Routes>
                     <Route exact path="/login" element={<Login />} />
+                    <Route exact path="/signup" element={<Signup />} />
                     <Route exact path="/" element={<Private><HomePage /></Private>} />
                     <Route exact path="/product" element={<Private><Product /></Private>} />
                 </Routes>

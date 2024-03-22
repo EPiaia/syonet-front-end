@@ -1,5 +1,7 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import { AuthContext } from "../context/authentication";
+import Input from "../components/Input";
+import './login.css'
 
 const Login = () => {
 
@@ -16,15 +18,20 @@ const Login = () => {
 
     return (
         <div className='login-container'>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor='usernameLogin'>Username</label>
-                <input id='usernameLogin' type='text' required defaultValue={username} onBlur={(e) => setUsername(e.target.value)} />
-                <br />
-                <label htmlFor='passwordLogin'>Password</label>
-                <input id='passwordLogin' type='password' required defaultValue={password} onBlur={(e) => setPassword(e.target.value)} />
-                <br />
-                <button type='submit'>Entrar</button>
-            </form>
+            <div className='login-box'>
+                <form onSubmit={handleSubmit}>
+                    <h2 className="center">Controle de Estoque</h2>
+                    <Input id='usernameLogin' type='text' defaultValue={username}  onBlur={(e) => setUsername(e.target.value)} className='login-input'
+                        placeholder='Usuário' />
+                    <br />
+                    <br />
+                    <Input id='passwordLogin' type='password' defaultValue={password}  onBlur={(e) => setPassword(e.target.value)} className='login-input'
+                        placeholder='Senha' />
+                    <br />
+                    <button type='submit' className='login-btn'>Entrar</button>
+                    <div className='center'><a href='signup'>Cadastre-se</a></div>
+                </form>
+            </div>
         </div>
     );
 };

@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext();
 
-
 export const AuthProvider = ({ children }) => {
     const navigate = useNavigate();
     const [user, setUser] = useState(null);
@@ -13,8 +12,8 @@ export const AuthProvider = ({ children }) => {
         const loggedUser = localStorage.getItem("user");
 
         if (loggedUser) {
-            const idUser = JSON.parse(loggedUser);
-            setUser(idUser)
+            const user = JSON.parse(loggedUser);
+            setUser(user);
         }
     }, []);
 
@@ -32,8 +31,15 @@ export const AuthProvider = ({ children }) => {
         }
     };
 
+    const logout = () => {
+        console.log('logout');
+        localStorage.removeItem("user");
+        setUser(null);
+        navigate("/login");
+    };
+
     return (
-        <AuthContext.Provider value={{ authenticated: !!user, user, login }} >
+        <AuthContext.Provider value={{ authenticated: !!localStorage.getItem("user"), user, login, logout }} >
             {children}
         </AuthContext.Provider>
     );
