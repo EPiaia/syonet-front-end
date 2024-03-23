@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { AuthContext } from "../context/authentication";
 import Input from "../components/Input";
 import './login.css'
+import { ReactNotifications } from 'react-notifications-component'
 
 const Login = () => {
 
@@ -30,6 +31,8 @@ const Login = () => {
                     <br />
                     <button type='submit' className='login-btn'>Entrar</button>
                     <div className='center'><a href='signup'>Cadastre-se</a></div>
+                    <br />
+                    <ReactNotifications />
                 </form>
             </div>
         </div>

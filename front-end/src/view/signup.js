@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { signup } from '../util/api.js'
 import Input from '../components/Input';
+import HTTP_STATUS from '../util/httpStatus.js';
+import { ReactNotifications } from 'react-notifications-component'
+import { existentUsername, unexpectedError } from '../util/messages.js';
 
 const Signup = () => {
     const [name, setName] = useState('');
@@ -20,7 +23,12 @@ const Signup = () => {
             setPassword("");
             navigate("/");
         } catch (error) {
-            console.log(error);
+            if (error.response.status === HTTP_STATUS.BAD_REQUEST) {
+                existentUsername();
+            } else {
+                unexpectedError();
+                console.log(error);
+            }
         }
     };
 
@@ -46,6 +54,12 @@ const Signup = () => {
                         placeholder='Senha' />
                     <br />
                     <button type='submit' className='login-btn'>Cadastrar</button>
+                    <br />
+                    <div className='center'>
+                        <a href='/login'>Voltar ao Login</a>
+                    </div>
+                    <br />
+                    <ReactNotifications />
                 </form>
             </div>
         </div>

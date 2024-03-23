@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from "../context/authentication";
+import TopBar from "../components/TopBar";
 
 const HomePage = () => {
     const { logout } = useContext(AuthContext);
@@ -9,8 +10,8 @@ const HomePage = () => {
     };
 
     return (
-        <div className="home-box">
-            <button onClick={handleClick}>Sair</button>
+        <div>
+            <TopBar />
         </div>
     );
 };

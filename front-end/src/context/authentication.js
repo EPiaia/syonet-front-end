@@ -1,6 +1,8 @@
 import React, { useState, useEffect, createContext } from "react";
 import { authenticate } from "../util/api.js";
 import { useNavigate } from "react-router-dom";
+import HTTP_STATUS from '../util/httpStatus';
+import { invalidUsernamePassword, unexpectedError } from '../util/messages';
 
 export const AuthContext = createContext();
 
@@ -27,7 +29,12 @@ export const AuthProvider = ({ children }) => {
             setUser(user);
             navigate("/");
         } catch (error) {
-            console.log(error);
+            if (error.response.status === HTTP_STATUS.NOT_FOUND) {
+                invalidUsernamePassword();
+            } else {
+                unexpectedError();
+                console.log(error);
+            }
         }
     };
 
