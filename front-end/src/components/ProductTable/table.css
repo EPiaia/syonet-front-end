@@ -1,0 +1,29 @@
+table.product-table {
+    border-spacing: initial;
+}
+
+.id-column {
+    width: 50px;
+}
+
+.desc-column {
+    width: 100%;
+}
+
+.stock-column {
+    width: 50px;
+}
+
+.product-table > thead {
+    background-color: #6747C7;
+    color: white;
+    text-align: center;
+}
+
+.product-table > tbody > tr:nth-child(even) {
+    background-color: #b29eed;
+}
+
+tbody tr {
+    cursor: pointer;
+}

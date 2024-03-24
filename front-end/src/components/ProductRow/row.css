@@ -1,0 +1,4 @@
+.product-table > tbody > tr.highlighted {
+    background-color: #00c89b;
+    color: white;
+}

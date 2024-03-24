@@ -11,3 +11,36 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.body-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 320px;
+}
+
+.save-button {
+  background-color: green;
+  color: white;
+}
+
+.cancel-button {
+  background-color: orange;
+  color: white;
+}
+
+.delete-button {
+  background-color: red;
+  color: white;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
