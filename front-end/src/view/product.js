@@ -4,6 +4,7 @@ import Button from '../components/Button';
 import TopBar from '../components/TopBar';
 import ProductDataTable from '../components/ProductDataTable';
 import { saveProduct, updateProduct, deleteProduct } from '../util/api';
+import { ReactNotifications } from 'react-notifications-component'
 
 const Product = () => {
     const [currentProductId, setCurrentProductId] = useState(null);
@@ -34,11 +35,7 @@ const Product = () => {
             return;
         }
 
-        try {
-            deleteProduct(currentProductId);
-        } catch (error) {
-            console.log(error);
-        }
+        deleteProduct(currentProductId);
         setCurrentProductId(null);
         setCurrentProductName("");
     }
@@ -70,6 +67,8 @@ const Product = () => {
                             <Button id="delete-btn" type="button" onClick={onDeleteClick} className="default-button delete-button">Deletar</Button>
                         </div>
                     </form>
+                    <br />
+                    <ReactNotifications />
                     <br />
                     <br />
                     <ProductDataTable selectedProduct={currentProductId} onRowClick={onRowClick} />

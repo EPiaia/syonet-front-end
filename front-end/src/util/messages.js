@@ -50,3 +50,71 @@ export const unexpectedError = () => {
         },
     });
 };
+
+export const requiredProduct = () => {
+    Store.addNotification({
+        title: "Produto inválido",
+        message: "Selecione um produto na tabela abaixo",
+        type: "danger",
+        insert: "top",
+        container: "top-right",
+        animationIn: ["animate__animated", "animate__fadeIn"],
+        animationOut: ["animate__animated", "animate__fadeOut"],
+        dismiss: {
+            duration: 2000,
+            onScreen: true,
+            pauseOnHover: true
+        },
+    });
+};
+
+export const moreThenStock = () => {
+    Store.addNotification({
+        title: "Quantidade inválida",
+        message: "Selecione um produto na tabela abaixo",
+        type: "danger",
+        insert: "top",
+        container: "top-right",
+        animationIn: ["animate__animated", "animate__fadeIn"],
+        animationOut: ["animate__animated", "animate__fadeOut"],
+        dismiss: {
+            duration: 2000,
+            onScreen: true,
+            pauseOnHover: true
+        },
+    });
+};
+
+export const productStockOut = () => {
+    Store.addNotification({
+        title: "Produto inválido",
+        message: "Não é possível selecionar produtos sem estoque",
+        type: "danger",
+        insert: "top",
+        container: "top-right",
+        animationIn: ["animate__animated", "animate__fadeIn"],
+        animationOut: ["animate__animated", "animate__fadeOut"],
+        dismiss: {
+            duration: 2000,
+            onScreen: true,
+            pauseOnHover: true
+        },
+    });
+};
+
+export const productHasMovement = () => {
+    Store.addNotification({
+        title: "Ação inválida",
+        message: "Não é possível deletar o Produto porque o mesmo possui movimentações de estoque",
+        type: "danger",
+        insert: "top",
+        container: "top-right",
+        animationIn: ["animate__animated", "animate__fadeIn"],
+        animationOut: ["animate__animated", "animate__fadeOut"],
+        dismiss: {
+            duration: 2000,
+            onScreen: true,
+            pauseOnHover: true
+        },
+    });
+};

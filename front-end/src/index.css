@@ -25,6 +25,11 @@ code {
   max-width: 320px;
 }
 
+.history-container {
+  width: 100%;
+  max-width: 700px;
+}
+
 .save-button {
   background-color: green;
   color: white;

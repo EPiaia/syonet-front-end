@@ -1,0 +1,41 @@
+table.history-table {
+    border-spacing: initial;
+}
+
+.prod-column {
+    width: 160px;
+}
+
+.type-column {
+    width: 120px;
+}
+
+td.quantity-column {
+    text-align: right;
+}
+
+.user-column {
+    width: 120px;
+}
+
+.date-column {
+    width: 120px;
+}
+
+td.date-column {
+    text-align: center;
+}
+
+.history-table > thead {
+    background-color: #6747C7;
+    color: white;
+    text-align: center;
+}
+
+.history-table > tbody > tr:nth-child(even) {
+    background-color: #b29eed;
+}
+
+tbody tr {
+    cursor: pointer;
+}
